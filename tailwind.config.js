@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dark-bg': '#0f0f0f',
-        'accent': '#ff9100',
+        'dark-bg': '#0f172a',
+        'accent': '#2563eb',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

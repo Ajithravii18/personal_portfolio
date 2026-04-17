@@ -5,28 +5,13 @@ import projectThumb from '../assets/project_thumb.png';
 
 const projects = [
     {
-        title: 'E-Commerce Dashboard',
-        description: 'A comprehensive dashboard for managing online stores, featuring real-time analytics, inventory management, and order tracking.',
-        tags: ['React', 'TailwindCSS', 'Chart.js', 'Node.js'],
+        title: 'e-Karma',
+        description: 'A comprehensive full-stack application built to facilitate seamless coordination and management. Features include real-time dashboards, user and volunteer management, integrated secure payment gateways, and SOS alerts.',
+        tags: ['MERN Stack', 'TailwindCSS', 'MongoDB', 'express'],
         image: projectThumb,
-        demoLink: '#',
-        codeLink: '#'
-    },
-    {
-        title: 'Social Media App',
-        description: 'A fully functional social media platform with real-time messaging, post sharing, and user authentication.',
-        tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
-        image: projectThumb,
-        demoLink: '#',
-        codeLink: '#'
-    },
-    {
-        title: 'Task Management Tool',
-        description: 'A collaborative task management application with drag-and-drop kanban boards and team collaboration features.',
-        tags: ['Vue.js', 'Firebase', 'Vuex', 'Tailwind'],
-        image: projectThumb,
-        demoLink: '#',
-        codeLink: '#'
+        demoLink: 'https://karma-frontend-jet.vercel.app/',
+        frontendCode: 'https://github.com/Ajithravii18/karma-frontend',
+        backendCode: 'https://github.com/Ajithravii18/karma-backend'
     }
 ];
 
@@ -49,7 +34,7 @@ const Projects = () => {
                 </motion.div>
 
                 <motion.div
-                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="flex justify-center"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
@@ -74,7 +59,7 @@ const Projects = () => {
                                     transition: { duration: 0.6, ease: "easeOut" }
                                 }
                             }}
-                            className="rounded-xl overflow-hidden group hover:shadow-[0_0_20px_rgba(255,145,0,0.15)] transition-all duration-300 border hover:border-accent/50"
+                            className="rounded-xl overflow-hidden group hover:shadow-[0_0_20px_rgba(37,99,235,0.15)] transition-all duration-300 border hover:border-accent/50 w-full max-w-lg"
                             style={{ backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border-color)' }}
                         >
                             {/* Image Container */}
@@ -85,9 +70,21 @@ const Projects = () => {
                                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                                 />
                                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                                    <a href={project.codeLink} className="p-3 bg-white text-black rounded-full hover:bg-accent transition-colors" title="View Code">
-                                        <FaGithub size={20} />
-                                    </a>
+                                    {project.frontendCode && (
+                                        <a href={project.frontendCode} className="p-3 bg-white text-black rounded-full hover:bg-accent transition-colors" title="Frontend Code">
+                                            <FaGithub size={20} />
+                                        </a>
+                                    )}
+                                    {project.backendCode && (
+                                        <a href={project.backendCode} className="p-3 bg-white text-black rounded-full hover:bg-accent transition-colors" title="Backend Code">
+                                            <FaGithub size={20} />
+                                        </a>
+                                    )}
+                                    {project.codeLink && (
+                                        <a href={project.codeLink} className="p-3 bg-white text-black rounded-full hover:bg-accent transition-colors" title="View Code">
+                                            <FaGithub size={20} />
+                                        </a>
+                                    )}
                                     <a href={project.demoLink} className="p-3 bg-white text-black rounded-full hover:bg-accent transition-colors" title="Live Demo">
                                         <FaExternalLinkAlt size={20} />
                                     </a>

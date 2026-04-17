@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
-import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const { theme, toggleTheme } = useTheme();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,15 +34,6 @@ const Navbar = () => {
                             </li>
                         ))}
                     </ul>
-
-                    {/* Theme Toggle Button */}
-                    <button
-                        onClick={toggleTheme}
-                        className="p-2 rounded-full bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:text-accent transition-all hover:scale-110"
-                        aria-label="Toggle theme"
-                    >
-                        {theme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />}
-                    </button>
 
                     {/* Mobile Menu Button (Simplified) */}
                     <div className="md:hidden">
