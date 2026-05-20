@@ -295,10 +295,10 @@ const Hero = () => {
                     className="flex flex-col items-center"
                 >
                     <h1 className="flex flex-col items-center mb-6 leading-none">
-                        <span className="font-serif italic text-4xl md:text-7xl font-normal text-[var(--text-primary)] tracking-normal mb-1">
+                        <span className="font-serif italic text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-normal text-[var(--text-primary)] tracking-normal mb-1">
                             I'm full-stack
                         </span>
-                        <span className="font-display font-extrabold text-6xl sm:text-7xl md:text-[9.5rem] tracking-tighter text-accent uppercase select-none mt-2">
+                        <span className="font-display font-extrabold text-[10.5vw] xs:text-5xl sm:text-7xl md:text-[8vw] lg:text-[7.5rem] xl:text-[8.5rem] tracking-tighter text-accent uppercase select-none mt-2">
                             DEVELOPER
                         </span>
                     </h1>

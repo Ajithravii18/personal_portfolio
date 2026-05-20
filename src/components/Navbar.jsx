@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 const Navbar = () => {
     const { theme, toggleTheme } = useTheme();
@@ -64,10 +65,11 @@ const Navbar = () => {
                     <div className="absolute left-1/2 transform -translate-x-1/2">
                         <button 
                             onClick={toggleTheme} 
-                            className="px-5 py-2 border border-black/20 dark:border-white/20 hover:border-black dark:hover:border-white rounded-full flex items-center justify-center text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 font-sans shadow-sm"
+                            className="px-4 py-2 md:px-5 md:py-2 border border-black/20 dark:border-white/20 hover:border-black dark:hover:border-white rounded-full flex items-center justify-center gap-2 text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 font-sans shadow-sm"
                             aria-label="Change Mode"
                         >
-                            Change the Mode
+                            {theme === 'dark' ? <FaSun className="text-xs text-amber-400" /> : <FaMoon className="text-xs text-slate-700" />}
+                            <span className="hidden md:inline">Change the Mode</span>
                         </button>
                     </div>
 
