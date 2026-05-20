@@ -27,7 +27,7 @@ const Preloader = () => {
                 <motion.h2
                     animate={{ opacity: [0.5, 1, 0.5] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
-                    className="text-xl font-bold tracking-widest text-[var(--text-primary)]"
+                    className="text-xl font-display font-extrabold tracking-[0.25em] text-[var(--text-primary)]"
                 >
                     LOADING
                 </motion.h2>

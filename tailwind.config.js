@@ -8,11 +8,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dark-bg': '#0f172a',
-        'accent': '#2563eb',
+        'dark-bg': '#09090b',
+        'accent': '#1b43f2',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        display: ['Syne', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
       },
     },
   },

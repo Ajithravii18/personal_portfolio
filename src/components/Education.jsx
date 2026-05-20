@@ -26,54 +26,71 @@ const educationData = [
 
 const Education = () => {
     return (
-        <section id="education" className="py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <section id="education" className="py-24 bg-[var(--bg-primary)]">
             <div className="container mx-auto px-6">
+                
+                {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    className="text-center mb-20"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>Education</h2>
-                    <div className="w-20 h-1 bg-accent mx-auto rounded-full"></div>
+                    <span className="font-serif italic text-accent text-2xl font-normal lowercase tracking-normal block mb-2">
+                        learning timeline
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-display font-extrabold mb-4 uppercase tracking-tighter text-[var(--text-primary)]">
+                        Education History
+                    </h2>
+                    <div className="w-16 h-[2px] bg-accent mx-auto"></div>
                 </motion.div>
 
+                {/* Timeline container */}
                 <div className="max-w-3xl mx-auto relative">
-                    {/* Vertical Line */}
-                    <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gray-700"></div>
+                    
+                    {/* Vertical Center Line */}
+                    <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-[1.5px] bg-accent/20"></div>
 
                     {educationData.map((item, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className={`relative flex items-center justify-between mb-12 md:mb-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
-                                }`}
+                            transition={{ duration: 0.6, delay: index * 0.15 }}
+                            className={`relative flex items-center justify-between mb-12 md:mb-16 ${
+                                index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+                            }`}
                         >
                             {/* Spacer for desktop layout */}
                             <div className="hidden md:block w-5/12"></div>
 
-                            {/* Timeline Dot */}
-                            <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-accent border-4 border-[var(--bg-primary)] flex items-center justify-center z-10">
+                            {/* Timeline Dot (Graduation Cap) */}
+                            <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-9 h-9 rounded-full bg-accent border-4 border-[var(--bg-primary)] flex items-center justify-center z-10 shadow-md">
                                 <FaGraduationCap className="text-white text-xs" />
                             </div>
 
                             {/* Content Card */}
                             <div className="ml-10 md:ml-0 w-full md:w-5/12">
-                                <div className="p-6 rounded-xl shadow-lg border hover:border-accent transition-all duration-300 group"
-                                    style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}>
-                                    <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-accent/10 text-accent mb-3">
+                                <div 
+                                    className="p-8 rounded-3xl border bg-[var(--bg-secondary)] border-black/5 dark:border-white/5 hover:border-accent/40 dark:hover:border-accent/40 shadow-sm hover:shadow-xl transition-all duration-500 group"
+                                >
+                                    <span className="inline-block px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-accent/5 text-accent mb-4 border border-accent/10">
                                         {item.year}
                                     </span>
-                                    <h3 className="text-xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>{item.degree}</h3>
-                                    <h4 className="text-md font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
+                                    <h3 className="text-xl font-display font-bold text-[var(--text-primary)] mb-1">
+                                        {item.degree}
+                                    </h3>
+                                    <h4 className="text-sm font-semibold text-[var(--text-tertiary)] mb-4 font-sans">
                                         {item.institution}
-                                        {item.specialization && <span className="block text-sm opacity-80 mt-1">{item.specialization}</span>}
+                                        {item.specialization && (
+                                            <span className="block text-xs text-accent mt-1 font-medium italic font-serif lowercase tracking-normal">
+                                                Specialization: {item.specialization}
+                                            </span>
+                                        )}
                                     </h4>
-                                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text-tertiary)' }}>
+                                    <p className="text-sm leading-relaxed text-[var(--text-secondary)] font-light">
                                         {item.description}
                                     </p>
                                 </div>
@@ -81,6 +98,7 @@ const Education = () => {
                         </motion.div>
                     ))}
                 </div>
+
             </div>
         </section>
     );
