@@ -287,7 +287,7 @@ const Hero = () => {
             ))}
 
             {/* Top Text Grid */}
-            <div className="w-full max-w-6xl mx-auto px-6 relative z-10 text-center select-none pointer-events-none">
+            <div className="w-full max-w-6xl mx-auto px-8 md:px-12 relative z-10 text-center select-none pointer-events-none">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
